@@ -1,0 +1,268 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Django 学习笔记 | 桃花换小鱼干の博客</title><meta name="author" content="FanFan"><meta name="copyright" content="FanFan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="引入Django 是一个用于构建 Web 应用程序的高级 Python 开发框架。它提供了一组强大的工具和库，使开发人员能够快速而高效地构建功能丰富的网站和Web应用，通过以下命名安装 Django Module 1pip install django  创建一个 Django 项目 1django-admin startproject mysite  该项目目录结构如下： 12345678mys">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Django 学习笔记">
+<meta property="og:url" content="https://blog.fanfan.asia/2023/12/30/Web/Django/index.html">
+<meta property="og:site_name" content="桃花换小鱼干の博客">
+<meta property="og:description" content="引入Django 是一个用于构建 Web 应用程序的高级 Python 开发框架。它提供了一组强大的工具和库，使开发人员能够快速而高效地构建功能丰富的网站和Web应用，通过以下命名安装 Django Module 1pip install django  创建一个 Django 项目 1django-admin startproject mysite  该项目目录结构如下： 12345678mys">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://sandbox-1307498918.cos.ap-shanghai.myqcloud.com/PictureBed/BlogCover-202312301403579.png">
+<meta property="article:published_time" content="2023-12-29T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-12-30T08:30:03.953Z">
+<meta property="article:author" content="FanFan">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://sandbox-1307498918.cos.ap-shanghai.myqcloud.com/PictureBed/BlogCover-202312301403579.png"><link rel="shortcut icon" href="https://sandbox-1307498918.cos.ap-shanghai.myqcloud.com/PictureBed/Icon-202312281807092.svg"><link rel="canonical" href="https://blog.fanfan.asia/2023/12/30/Web/Django/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":500},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: FanFan","link":"链接: ","source":"来源: 桃花换小鱼干の博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Django 学习笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-12-30 16:30:03'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://sandbox-1307498918.cos.ap-shanghai.myqcloud.com/PictureBed/Avatar-202312261459168.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://sandbox-1307498918.cos.ap-shanghai.myqcloud.com/PictureBed/BlogCover-202312301403579.png')"><nav id="nav"><span id="blog-info"><a href="/" title="桃花换小鱼干の博客"><span class="site-name">桃花换小鱼干の博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Django 学习笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-12-29T16:00:00.000Z" title="发表于 2023-12-30 00:00:00">2023-12-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-12-30T08:30:03.953Z" title="更新于 2023-12-30 16:30:03">2023-12-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Web/">Web</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Django 学习笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h1><p>Django 是一个用于构建 Web 应用程序的高级 Python 开发框架。它提供了一组强大的工具和库，使开发人员能够快速而高效地构建功能丰富的网站和Web应用，通过以下命名安装 Django Module</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install django</span><br></pre></td></tr></table></figure>
+
+<p><strong>创建一个 Django 项目</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">django-admin startproject mysite</span><br></pre></td></tr></table></figure>
+
+<p><strong>该项目目录结构如下</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mysite/</span><br><span class="line">    manage.py</span><br><span class="line">    mysite/</span><br><span class="line">        __init__.py</span><br><span class="line">        settings.py</span><br><span class="line">        urls.py</span><br><span class="line">        asgi.py</span><br><span class="line">        wsgi.py</span><br></pre></td></tr></table></figure>
+
+<p><strong>文件和目录的用处如下</strong>：</p>
+<ul>
+<li>最外层的 <code>mysite/</code> 目录只是你项目的容器，名称对 Django 没有影响，可随意重命名</li>
+<li><code>manage.py</code>：一个命令行工具，用于管理和运行 Django 项目，如启动开发服务器、创建数据库、执行数据库迁移、运行测试等等</li>
+<li>里面一层的 <code>mysite/</code> 目录：包含你的项目，它是一个纯 Python 包。它的名字就是当你引用它内部任何东西时需要用到的 Python 包名。 (比如 <code>mysite.urls</code>)</li>
+<li><code>mysite/__init__.py</code>：一个空文件，告诉 Python 这个目录应该被认为是一个 Python 包</li>
+<li><code>mysite/settings.py</code>：Django 项目的配置文件</li>
+<li><code>mysite/urls.py</code>：Django 项目的 URL 声明，就像你网站的“目录”。</li>
+<li><code>mysite/asgi.py</code>：作为你的项目的运行在 ASGI 兼容的 Web 服务器上的入口。</li>
+<li><code>mysite/wsgi.py</code>：作为你的项目的运行在 WSGI 兼容的Web服务器上的入口。</li>
+</ul>
+<p><strong>运行该 Django 项目</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 切换到最外层 `mysite/` 目录下，输入以下命令</span></span><br><span class="line">python manage.py runserver</span><br></pre></td></tr></table></figure>
+
+<p>运行信息如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">You have 18 unapplied migration(s). Your project may not work properly <span class="keyword">until</span> you apply the migrations <span class="keyword">for</span> app(s): admin, auth, contenttypes, sessions.</span><br><span class="line">Run <span class="string">&#x27;python manage.py migrate&#x27;</span> to apply them.</span><br><span class="line">December 30, 2023 - 15:30:30</span><br><span class="line">Django version 4.2.8, using settings <span class="string">&#x27;mysite.settings&#x27;</span></span><br><span class="line">Starting development server at http://127.0.0.1:8000/</span><br><span class="line">Quit the server with CTRL-BREAK.</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>上述警告 ⚠️ 讯息是指存在 18 个未应用的数据库迁移，这是因为我们在 Django 项目中创建、修改或删除模型（Model）时，需要生成相应的数据库迁移文件，并将这些变化应用到数据库中。每个迁移文件对应一个特定的数据库操作，如创建表、添加字段、删除字段等。我们刚创建项目，新建了很多文件，但仍未做迁移工作（Django 能通过用户定义的模型自动生成对应数据库，而无需用户自行创建数据库，下面是一个例子）</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Book</span>(models.Model):</span><br><span class="line">    title = models.CharField(max_length=<span class="number">100</span>)</span><br><span class="line">    author = models.CharField(max_length=<span class="number">100</span>)</span><br><span class="line">    publication_date = models.DateField()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__str__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> self.title</span><br></pre></td></tr></table></figure>
+
+<p>上述代码中，定义了一个名为 <code>Book</code> 的模型类。它具有三个字段：<code>title</code>、<code>author</code> 和 <code>publication_date</code>。<code>title</code> 和 <code>author</code> 字段是字符型字段（CharField），而 <code>publication_date</code> 字段是日期型字段（DateField）。<code>max_length</code> 参数用于指定字符型字段的最大长度。还定义了 <code>__str__()</code> 方法，用于在打印模型对象时返回一个可读性较好的字符串表示。在本例中，我们将返回书籍的标题作为字符串表示。通过定义模型类，Django 将自动创建相应的数据库表，并提供一系列的数据库操作方法，如创建、查询、更新和删除数据。你可以使用这些方法来操作数据库中的书籍数据。</p>
+<p><strong>指定端口运行 Django 项目</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py runserver 8080</span><br></pre></td></tr></table></figure>
+
+<h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><p>现在你的开发环境 —— 这个 “项目” ——已经配置好了，你可以开始干活了（例如上述的 <code>mysite</code> 项目）</p>
+<p>在 Django 中，每一个应用都是一个 Python 包，并且遵循着相同的约定。Django 自带一个工具，可以帮你生成应用的基础目录结构，这样你就能专心写代码，而不是创建目录了</p>
+<p>项目和应用的区别如下：</p>
+<ul>
+<li><strong>应用</strong>是一个专门做某件事的网络应用程序 —— 比如博客系统，或者公共记录的数据库，或者小型的投票程序</li>
+<li><strong>项目</strong>则是一个网站使用的配置和应用的集合</li>
+<li>项目可以包含很多个应用。应用可以被很多个项目使用。</li>
+</ul>
+<p><strong>创建第一个应用</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py startapp polls</span><br></pre></td></tr></table></figure>
+
+<p><strong>应用的目录结构</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">polls</span><br><span class="line">    ├── admin.py</span><br><span class="line">    ├── apps.py</span><br><span class="line">    ├── __init__.py</span><br><span class="line">    ├── migrations</span><br><span class="line">    │   └── __init__.py</span><br><span class="line">    ├── models.py</span><br><span class="line">    ├── tests.py</span><br><span class="line">    └── views.py</span><br></pre></td></tr></table></figure>
+
+<p><strong>编写第一个视图</strong></p>
+<p>打开 <code>polls/views.py</code>，把下面这些 Python 代码输入进去</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"><span class="comment"># index 视图函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">index</span>(<span class="params">request</span>):</span><br><span class="line">    <span class="keyword">return</span> HttpResponse(<span class="string">&quot;Hello, world. You&#x27;re at the polls index.&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>配置视图路由</strong></p>
+<p>视图编写完毕后还需要设置路由，将一个 URL 映射到它 —— 这就是我们需要 URLconf 的原因了</p>
+<p>在当前 Django 应用目录创建 <code>urls.py</code> 文件，并键入下列代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path</span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> views</span><br><span class="line">urlpatterns = [</span><br><span class="line">    <span class="comment"># 该应用的 url 根目录映射到 index 视图函数，并将该 URL 模式命名为 index</span></span><br><span class="line">    path(<span class="string">&quot;&quot;</span>, views.index, name = <span class="string">&quot;index&quot;</span>)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>被命名 URL 模式可以在 Django 项目的其他地方使用，例如在模板中生成链接</li>
+</ul>
+<p>在 Django 应用目录中配置 <code>urls.py</code> 后，还需要在整个项目的 <code>urls.py</code> 中包含该应用的 <code>urls.py</code> 配置，使其生效</p>
+<p>在 <code>mysite/urls.py</code> 文件中引入<code>include</code>并在<code>urlpatterns</code> 列表里插入一个 <code>include()</code>， 如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> include, path</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">&quot;admin/&quot;</span>, admin.site.urls),</span><br><span class="line">    path(<span class="string">&quot;polls/&quot;</span>, include(<span class="string">&quot;polls.urls&quot;</span>)),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>何时使用<code>include()</code>：当包括其它 URL 模式时你应该总是使用 <code>include()</code> ， <code>admin.site.urls</code> 是唯一例外</li>
+</ul>
+<p><strong>再次运行 Django 服务</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py runserver</span><br></pre></td></tr></table></figure>
+
+<p>访问 <code>http://127.0.0.1:8000/polls/</code> </p>
+<img src="https://sandbox-1307498918.cos.ap-shanghai.myqcloud.com/PictureBed/Django-202312301629381.png" style="zoom:75%;" />
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://blog.fanfan.asia">FanFan</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://blog.fanfan.asia/2023/12/30/Web/Django/">https://blog.fanfan.asia/2023/12/30/Web/Django/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.fanfan.asia" target="_blank">桃花换小鱼干の博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://sandbox-1307498918.cos.ap-shanghai.myqcloud.com/PictureBed/BlogCover-202312301403579.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/12/28/Program/Algorithm/" title="Algorithm Summary"><img class="cover" src="https://sandbox-1307498918.cos.ap-shanghai.myqcloud.com/PictureBed/BlogCover-202312281703516.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Algorithm Summary</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://sandbox-1307498918.cos.ap-shanghai.myqcloud.com/PictureBed/Avatar-202312261459168.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">FanFan</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/fanfanchina"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/fanfanchina" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:zhangfanfan2023@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%95%E5%85%A5"><span class="toc-number">1.</span> <span class="toc-text">引入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BA%94%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">应用</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/12/30/Web/Django/" title="Django 学习笔记"><img src="https://sandbox-1307498918.cos.ap-shanghai.myqcloud.com/PictureBed/BlogCover-202312301403579.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Django 学习笔记"/></a><div class="content"><a class="title" href="/2023/12/30/Web/Django/" title="Django 学习笔记">Django 学习笔记</a><time datetime="2023-12-29T16:00:00.000Z" title="发表于 2023-12-30 00:00:00">2023-12-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/12/28/Program/Algorithm/" title="Algorithm Summary"><img src="https://sandbox-1307498918.cos.ap-shanghai.myqcloud.com/PictureBed/BlogCover-202312281703516.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Algorithm Summary"/></a><div class="content"><a class="title" href="/2023/12/28/Program/Algorithm/" title="Algorithm Summary">Algorithm Summary</a><time datetime="2023-12-27T16:00:00.000Z" title="发表于 2023-12-28 00:00:00">2023-12-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/23/Linux/Nginx/" title="Nginx 使用笔记"><img src="https://sandbox-1307498918.cos.ap-shanghai.myqcloud.com/PictureBed/BlogCover-202312262047477.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Nginx 使用笔记"/></a><div class="content"><a class="title" href="/2023/07/23/Linux/Nginx/" title="Nginx 使用笔记">Nginx 使用笔记</a><time datetime="2023-07-22T16:00:00.000Z" title="发表于 2023-07-23 00:00:00">2023-07-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/14/Theory/ComputerNetwork/" title="计算机网络应用层知识归类"><img src="https://s2.loli.net/2023/02/05/v9eFCKHBPYkXbUi.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机网络应用层知识归类"/></a><div class="content"><a class="title" href="/2023/06/14/Theory/ComputerNetwork/" title="计算机网络应用层知识归类">计算机网络应用层知识归类</a><time datetime="2023-06-13T16:00:00.000Z" title="发表于 2023-06-14 00:00:00">2023-06-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/14/Tutorial/DoubleSystems/" title="如何搭建 Windows 11 + Ubuntu 22.04 双系统"><img src="https://sandbox-1307498918.cos.ap-shanghai.myqcloud.com/PictureBed/BlogCover-202312261403675.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="如何搭建 Windows 11 + Ubuntu 22.04 双系统"/></a><div class="content"><a class="title" href="/2023/06/14/Tutorial/DoubleSystems/" title="如何搭建 Windows 11 + Ubuntu 22.04 双系统">如何搭建 Windows 11 + Ubuntu 22.04 双系统</a><time datetime="2023-06-13T16:00:00.000Z" title="发表于 2023-06-14 00:00:00">2023-06-14</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By FanFan</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
