@@ -1,0 +1,299 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Math Theory | 桃花换小鱼干の博客</title><meta name="author" content="FanFan"><meta name="copyright" content="FanFan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="F_分解质因数123456789101112131415161718192021222324252627#include &lt;bits&#x2F;stdc++.h&gt;#pragma GCC optimize(2)#define endl &quot;\n&quot;using namespace std;int n, t;void divide(int x) &amp;#123;    for(int i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Math Theory">
+<meta property="og:url" content="https://blog.fanfan.asia/2024/04/26/Algorithm/MathTheory/index.html">
+<meta property="og:site_name" content="桃花换小鱼干の博客">
+<meta property="og:description" content="F_分解质因数123456789101112131415161718192021222324252627#include &lt;bits&#x2F;stdc++.h&gt;#pragma GCC optimize(2)#define endl &quot;\n&quot;using namespace std;int n, t;void divide(int x) &amp;#123;    for(int i">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://sandbox-1307498918.cos.ap-shanghai.myqcloud.com/PictureBed/BlogCover-202312281703516.webp">
+<meta property="article:published_time" content="2024-04-25T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-04-26T08:27:20.377Z">
+<meta property="article:author" content="FanFan">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://sandbox-1307498918.cos.ap-shanghai.myqcloud.com/PictureBed/BlogCover-202312281703516.webp"><link rel="shortcut icon" href="https://sandbox-1307498918.cos.ap-shanghai.myqcloud.com/PictureBed/Icon-202312281807092.svg"><link rel="canonical" href="https://blog.fanfan.asia/2024/04/26/Algorithm/MathTheory/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":500},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Math Theory',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-04-26 16:27:20'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://sandbox-1307498918.cos.ap-shanghai.myqcloud.com/PictureBed/Avatar-202312261459168.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">43</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://sandbox-1307498918.cos.ap-shanghai.myqcloud.com/PictureBed/BlogCover-202312281703516.webp')"><nav id="nav"><span id="blog-info"><a href="/" title="桃花换小鱼干の博客"><span class="site-name">桃花换小鱼干の博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Math Theory</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-04-25T16:00:00.000Z" title="发表于 2024-04-26 00:00:00">2024-04-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-04-26T08:27:20.377Z" title="更新于 2024-04-26 16:27:20">2024-04-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Algorithm/">Algorithm</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Math Theory"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="F-分解质因数"><a href="#F-分解质因数" class="headerlink" title="F_分解质因数"></a>F_分解质因数</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(2)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> endl <span class="string">&quot;\n&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, t;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">divide</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= x / i; i ++ ) &#123;</span><br><span class="line">        <span class="keyword">if</span>(x % i == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="type">int</span> t = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(x % i == <span class="number">0</span>) t ++, x /= i;</span><br><span class="line">            cout &lt;&lt; i &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; t &lt;&lt; endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(x != <span class="number">1</span>) cout &lt;&lt; x &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; <span class="number">1</span> &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="keyword">while</span>(n --) &#123;</span><br><span class="line">        cin &gt;&gt; t;</span><br><span class="line">        <span class="built_in">divide</span>(t);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>算术基本定理：每个正整数都能唯一分解为它的质因数的乘积 $N&#x3D;P1^{a1} * P2^{a2} *P3^{a3}…..Pn^{an}$</p>
+<ul>
+<li>Q1：循环内的 i 不一定是质数啊？</li>
+<li>A1：假如 i 是一个合数，那么它一定可以分解成多个质因子相乘的形式，这多个质因子同时也是 a 的质因子且比 i 要小，而比 i 小的数在之前的循环过程中一定是被条件除完了的，所以 i 不可能是合数，只可能是质数，这也是循环从最小质数2不断增大的原因</li>
+</ul>
+<h2 id="K-快速幂"><a href="#K-快速幂" class="headerlink" title="K_快速幂"></a>K_快速幂</h2><p>问题：快速计算 $a^k \bmod p$ 的大小</p>
+<p>原理：反复平方法、二进制取幂</p>
+<p>例子：计算 $7^9$</p>
+<p>第一步：预处理出 $a^{2^0} \ a^{2^1} \ a^{2^2} \ … \ a^{2^{logk}}$ 的值（反复平方法）</p>
+<ul>
+<li>$7^{(0001)_2} &#x3D; 7$</li>
+<li>$7^{(0010)_2} &#x3D; 7^{(0001)_2} \times 7^{(0001)_2}$</li>
+<li>$7^{(0100)_2} &#x3D; 7^{(0010)_2} \times 7^{(0010)_2}$</li>
+<li>$7^{(1000)_2} &#x3D; 7^{(0100)_2} \times 7^{(0100)_2}$</li>
+</ul>
+<p>第二步：拆分并组合</p>
+<ul>
+<li>$7^9 &#x3D; 7^{(1010)_2} &#x3D; 7^{(1000)_2} \times 7^{(0010)_2}$</li>
+</ul>
+<p>其实不难发现这两个步骤可以放到桶一个循环里面去</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(k) &#123;</span><br><span class="line">    <span class="keyword">if</span>(k &amp; <span class="number">1</span>) res *= a;</span><br><span class="line">    k &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    a *= a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>实际过程如下：</p>
+<p><img src="https://sandbox-1307498918.cos.ap-shanghai.myqcloud.com/PictureBed/Algorithm-202312310016224.png"></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(2)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> endl <span class="string">&quot;\n&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> LL;</span><br><span class="line"><span class="type">int</span> n, a, k, p;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">QuickPower</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> k, <span class="type">int</span> p)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> res = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(k) &#123;</span><br><span class="line">        <span class="keyword">if</span>(k &amp; <span class="number">1</span>) res = (LL)res * a % p;</span><br><span class="line">        k &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        a = (LL)a * a % p;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="keyword">while</span>(n -- ) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;a, &amp;k, &amp;p);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="built_in">QuickPower</span>(a, k, p));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="M-买不到的数目"><a href="#M-买不到的数目" class="headerlink" title="M_买不到的数目"></a>M_买不到的数目</h2><p><strong>前置知识</strong></p>
+<ol>
+<li>若 $gcd(p, q) &#x3D; d$，那么 $ap + bq &#x3D; kd$，即 $p$ 和 $q$ 能凑出 $d$ 的任何整数倍</li>
+<li>若 $gcd(p, q) &#x3D; d &#x3D; 1$（$p$ 和 $q$ 互质）那么 $amp + bmq &#x3D; m$，变形为 $(am + q)p + (bm - p)q &#x3D; m$，可以看出如果 $m$ 足够大，终会使两系数化为正数</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 暴搜打表找规</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(2)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> endl <span class="string">&quot;\n&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> m, <span class="type">int</span> p, <span class="type">int</span> q)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(m == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">if</span>(m &gt;= p &amp;&amp; <span class="built_in">dfs</span>(m - p, p, q)) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">if</span>(m &gt;= q &amp;&amp; <span class="built_in">dfs</span>(m - q, p, q)) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> p, q;</span><br><span class="line">    cin &gt;&gt; p &gt;&gt; q;</span><br><span class="line">    <span class="type">int</span> res;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">1000</span>; i ++ )</span><br><span class="line">        <span class="keyword">if</span>(!<span class="built_in">dfs</span>(i, p, q)) res = i;</span><br><span class="line">    cout &lt;&lt; res &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>规律：若 $gcd(p, q) &#x3D; 1$ 那么 $ap + bq$ $(x≥0 \ y≥0)$ 不能凑出来的最大整数为 $(p - 1)(q - 1) - 1$</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 公式法</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(2)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> endl <span class="string">&quot;\n&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> p, q;</span><br><span class="line">    cin &gt;&gt; p &gt;&gt; q;</span><br><span class="line">    cout &lt;&lt; (p - <span class="number">1</span>) * (q - <span class="number">1</span>) - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="S-筛质数"><a href="#S-筛质数" class="headerlink" title="S_筛质数"></a>S_筛质数</h2><p><strong>朴素做法</strong> $O(nlogn)$</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(2)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> endl <span class="string">&quot;\n&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e6</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// true 为合数 || false 为质数</span></span><br><span class="line"><span class="type">bool</span> st[N];</span><br><span class="line"><span class="type">int</span> primes[N], cnt, n;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">getPrimes</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; i ++ ) &#123;</span><br><span class="line">        <span class="comment">// 把质数存起来</span></span><br><span class="line">        <span class="keyword">if</span>(!st[i]) primes[++ cnt] = i;</span><br><span class="line">        <span class="comment">// 不管是合数还是质数，都用来用来筛掉后面它的倍数 (从 2 倍开始)</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = i + i; j &lt;= n; j += i) st[j] = <span class="literal">true</span>; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="built_in">getPrimes</span>(n);</span><br><span class="line">    cout &lt;&lt; cnt;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>若 $p$ 没被筛掉，说明 $1 \sim p -1$ 都不能成为 $p$ 的约数，那么 $p$ 就一定是质数</li>
+<li>时间复杂度 $\dfrac{n}{2} + \dfrac{n}{3} + … + \dfrac{n}{n} &#x3D; n(\dfrac{1}{2} + \dfrac{1}{3} + \dfrac{1}{n}) \approx n\ln n &lt; nlog_2n \Rightarrow O(nlogn)$ (调和级数)</li>
+</ul>
+<p><strong>诶氏筛法</strong> $O(n\log{\log n})$</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(2)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> endl <span class="string">&quot;\n&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e6</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// true 为合数 || false 为质数</span></span><br><span class="line"><span class="type">bool</span> st[N];</span><br><span class="line"><span class="type">int</span> primes[N], cnt, n;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">getPrimes</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; i ++ ) &#123;</span><br><span class="line">        <span class="keyword">if</span>(!st[i]) &#123;</span><br><span class="line">            <span class="comment">// 把质数存起来</span></span><br><span class="line">            primes[++ cnt] = i;</span><br><span class="line">            <span class="comment">// 可以用质数就把所有的合数都筛掉</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = i + i; j &lt;= n; j += i) st[j] = <span class="literal">true</span>; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="built_in">getPrimes</span>(n);</span><br><span class="line">    cout &lt;&lt; cnt;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>诶氏筛法其实是对朴素做法的优化</li>
+<li>质数定理：$1 \sim n$ 中存在 $\dfrac{n}{\ln n}$ 个质数</li>
+</ul>
+<p><strong>线性筛法</strong> $O(n)$</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(2)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> endl <span class="string">&quot;\n&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e6</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// true 为合数 || false 为质数</span></span><br><span class="line"><span class="type">bool</span> st[N];</span><br><span class="line"><span class="type">int</span> primes[N], cnt, n;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">getPrimes</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; i ++ ) &#123;</span><br><span class="line">        <span class="comment">// 把质数存起来</span></span><br><span class="line">        <span class="keyword">if</span>(!st[i]) primes[++ cnt] = i;</span><br><span class="line">        <span class="comment">// 用合数的最小质因子去筛去合数</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; primes[j] &lt;= n / i; j ++ ) &#123;</span><br><span class="line">            st[primes[j] * i] = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">if</span>(i % primes[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="built_in">getPrimes</span>(n);</span><br><span class="line">    cout &lt;&lt; cnt;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="S-试除法判定质数"><a href="#S-试除法判定质数" class="headerlink" title="S_试除法判定质数"></a>S_试除法判定质数</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(2)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> endl <span class="string">&quot;\n&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">isPrime</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x &lt; <span class="number">2</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= x / i; i ++ )</span><br><span class="line">        <span class="keyword">if</span>(x % i == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n, t;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++ ) &#123;</span><br><span class="line">        cin &gt;&gt; t;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">isPrime</span>(t)) cout &lt;&lt; <span class="string">&quot;Yes&quot;</span> &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">else</span> cout &lt;&lt; <span class="string">&quot;No&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>0 和 1 既不是质数也不是合数</li>
+<li>用试除法去判断 x 是否是质数的过程就是：<strong>试着用 x 去除 2 到 x - 1 的所有数</strong>，若可除整则为合数，否则为质数</li>
+<li>但实际上除数不用拓展到 x - 1，只用到 $\sqrt{x}$ 即可</li>
+</ul>
+<h2 id="Z-最大公约数"><a href="#Z-最大公约数" class="headerlink" title="Z_最大公约数"></a>Z_最大公约数</h2><p><strong>辗转相减法</strong></p>
+<p>$a$ 和 $b$ 的最大公约数表示为 $(a,b)$，那么 $p &#x3D; (a, b) &#x3D; (a, ca + b)$</p>
+<p>注：如果 $p$ 是 $a$ 和 $ca+b$ 的公约数，$p$ 整除 $a$，也能整除 $ca+b$，那么就必定要整除 $b$</p>
+<p>基于上面的原理，就能实现我们的迭代相减法（大数减小数）：</p>
+<p>$(78, 14) \sim (64, 14) \sim (50, 14) \sim (36, 14) \sim (22, 14) \sim (8, 14) \sim (8, 6) \sim (2, 6) \sim (2,4) \sim (2, 2) \sim (2, 0)$</p>
+<p>实际上，我们可以使用求余运算替代重复的减法运算，由此诞生了辗转相除法</p>
+<p><strong>辗转相除法</strong></p>
+<ul>
+<li>$(78,14) &#x3D; (14 × 5 + 8,14) \sim (8,14)$</li>
+<li>$(14, 8) &#x3D; (8 + 6, 8) \sim (6, 8)$</li>
+<li>$(8, 6) &#x3D; (6 + 2, 6) \sim (2, 6)$</li>
+<li>$(6,2) &#x3D; (2×3,2) \sim(0,2)$</li>
+<li>$(2, 0)$</li>
+</ul>
+<p>计算出 $(78,14) &#x3D; 2$</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(2)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> endl <span class="string">&quot;\n&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">gcd</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> b ? <span class="built_in">gcd</span>(b, a % b) : a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n, a, b;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="keyword">while</span>(n --) &#123;</span><br><span class="line">        cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">        cout &lt;&lt; <span class="built_in">gcd</span>(a, b) &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Z-组合数"><a href="#Z-组合数" class="headerlink" title="Z_组合数"></a>Z_组合数</h2><p><strong>公式表示</strong></p>
+<p>Scenario：在 $n$ 个物品里面选取 $m$ 个，一共有多少选法？</p>
+<p>Formula：$C_n^m \ \ \ \ (n, m) \ \ \ \ {n \choose m}$ </p>
+<p><strong>组合数计算（公式法）</strong></p>
+<p>$C_a^b &#x3D; \dfrac{a(a - 1)\cdots(a - b+1)}{b(b - 1)\cdots1}$</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">LL <span class="title">Formula</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">	LL res = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>, j = a; i &lt;= b; i ++, j -- ) res = res * j / i;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>组合数计算（递推法）</strong></p>
+<p>$C_a^b &#x3D; C_{a - 1}^b + C_{a - 1}^{b - 1}$</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">LL <span class="title">Recur</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> C[<span class="number">100</span>][<span class="number">100</span>];</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= a; i ++ ) &#123;</span><br><span class="line">		C[i][<span class="number">0</span>] = C[i][i] = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= i - <span class="number">1</span>; j ++ )</span><br><span class="line">			C[i][j] = C[i - <span class="number">1</span>][j] + C[i - <span class="number">1</span>][j - <span class="number">1</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> C[a][b];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>Q1：为什么递推法中子循环小于等于 $i - 1$</p>
+</li>
+<li><p>A1：因为递推法公式是 $C_a^b &#x3D; C_{a - 1}^b + C_{a - 1}^{b - 1}$ 由于组合数的特性，下标永远大于上标，所以在 $C_{i - 1}^{j}$ 中 $j &lt;&#x3D; i - 1$</p>
+</li>
+<li><p>Q2：怎么感觉这个递推法和动态规划有相似之处</p>
+</li>
+<li><p>A2：其实该递推公式其实就是一个动态转移方程，集合划分如下：</p>
+<p>  <img src="https://sandbox-1307498918.cos.ap-shanghai.myqcloud.com/PictureBed/Algorithm-202401142303499.png"></p>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://blog.fanfan.asia">FanFan</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://blog.fanfan.asia/2024/04/26/Algorithm/MathTheory/">https://blog.fanfan.asia/2024/04/26/Algorithm/MathTheory/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.fanfan.asia" target="_blank">桃花换小鱼干の博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://sandbox-1307498918.cos.ap-shanghai.myqcloud.com/PictureBed/BlogCover-202312281703516.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/04/19/Development/Java_2/" title="Java II"><img class="cover" src="https://sandbox-1307498918.cos.ap-shanghai.myqcloud.com/PictureBed/BlogCover-20240418172508.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Java II</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://sandbox-1307498918.cos.ap-shanghai.myqcloud.com/PictureBed/Avatar-202312261459168.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">FanFan</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">43</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/fanfanchina"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/fanfanchina" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:zhangfanfan2023@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#F-%E5%88%86%E8%A7%A3%E8%B4%A8%E5%9B%A0%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text">F_分解质因数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#K-%E5%BF%AB%E9%80%9F%E5%B9%82"><span class="toc-number">2.</span> <span class="toc-text">K_快速幂</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#M-%E4%B9%B0%E4%B8%8D%E5%88%B0%E7%9A%84%E6%95%B0%E7%9B%AE"><span class="toc-number">3.</span> <span class="toc-text">M_买不到的数目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#S-%E7%AD%9B%E8%B4%A8%E6%95%B0"><span class="toc-number">4.</span> <span class="toc-text">S_筛质数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#S-%E8%AF%95%E9%99%A4%E6%B3%95%E5%88%A4%E5%AE%9A%E8%B4%A8%E6%95%B0"><span class="toc-number">5.</span> <span class="toc-text">S_试除法判定质数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Z-%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0"><span class="toc-number">6.</span> <span class="toc-text">Z_最大公约数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Z-%E7%BB%84%E5%90%88%E6%95%B0"><span class="toc-number">7.</span> <span class="toc-text">Z_组合数</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/04/26/Algorithm/MathTheory/" title="Math Theory"><img src="https://sandbox-1307498918.cos.ap-shanghai.myqcloud.com/PictureBed/BlogCover-202312281703516.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Math Theory"/></a><div class="content"><a class="title" href="/2024/04/26/Algorithm/MathTheory/" title="Math Theory">Math Theory</a><time datetime="2024-04-25T16:00:00.000Z" title="发表于 2024-04-26 00:00:00">2024-04-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/04/19/Development/Java_2/" title="Java II"><img src="https://sandbox-1307498918.cos.ap-shanghai.myqcloud.com/PictureBed/BlogCover-20240418172508.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java II"/></a><div class="content"><a class="title" href="/2024/04/19/Development/Java_2/" title="Java II">Java II</a><time datetime="2024-04-18T16:00:00.000Z" title="发表于 2024-04-19 00:00:00">2024-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/04/18/Theory/MachineCode/" title="机器编码"><img src="https://sandbox-1307498918.cos.ap-shanghai.myqcloud.com/PictureBed/BlogCover-20240418200857.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="机器编码"/></a><div class="content"><a class="title" href="/2024/04/18/Theory/MachineCode/" title="机器编码">机器编码</a><time datetime="2024-04-17T16:00:00.000Z" title="发表于 2024-04-18 00:00:00">2024-04-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/04/17/Development/Java_1/" title="Java I"><img src="https://sandbox-1307498918.cos.ap-shanghai.myqcloud.com/PictureBed/BlogCover-20240418172508.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java I"/></a><div class="content"><a class="title" href="/2024/04/17/Development/Java_1/" title="Java I">Java I</a><time datetime="2024-04-16T16:00:00.000Z" title="发表于 2024-04-17 00:00:00">2024-04-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/04/10/Tutorial/PyQt5/" title="Python QT 5"><img src="https://sandbox-1307498918.cos.ap-shanghai.myqcloud.com/PictureBed/BlogCover-20240417221108.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python QT 5"/></a><div class="content"><a class="title" href="/2024/04/10/Tutorial/PyQt5/" title="Python QT 5">Python QT 5</a><time datetime="2024-04-09T16:00:00.000Z" title="发表于 2024-04-10 00:00:00">2024-04-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By FanFan</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
